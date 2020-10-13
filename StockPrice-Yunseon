@@ -1,0 +1,32 @@
+
+public class StockPrice {
+	public static int[] solution(int[] prices) {
+		int[] answer = new int[prices.length];
+       
+		for(int i=0; i<prices.length; i++) {
+			 int cnt = 1;
+			 if(i == prices.length-1) { // 마지막 원소 탈출
+				 break;
+			 }
+			 
+			 while(prices[i]<=prices[i+cnt]) {
+				 		 
+		         
+		         if(i+cnt == prices.length-1) { // 비교값이 마지막 원소였다면 탈출
+					 break;
+				 }
+		         cnt++;
+		     }
+			 answer[i] = cnt;
+		}
+       
+        
+        return answer;
+    }
+	
+	public static void main(String[] args) {
+		int[] a = {1,5,2,3,2};
+		solution(a);
+	}
+	
+}
